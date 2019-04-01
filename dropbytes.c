@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
 
     if (2 != argc) {
         fprintf(stderr, "usage: %s NUM_BYTES < in > out\n", argv[0]);
+	fprintf(stderr, "Drop NUM_BYTES from the beginning of input\n");
         exit(EXIT_SUCCESS);
     }
 
@@ -54,6 +55,8 @@ int main(int argc, char *argv[])
     while ((c = getchar()) != EOF) {
         putchar(c);
     }
+
+    fflush(stdout);
 
     return 0;
 }
